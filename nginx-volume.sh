@@ -17,7 +17,7 @@ docker rm nginx 1> /dev/null
 
 printComment "\n#Starting new container with a volume\n"
 printComment "#As a short-cut, we're going to mount our new HTML on top of the default NGINX HTML location\n"
-printf "docker run --name nginx -d -p 80:80 -v /home/randy/tools/docker-lab/html:/usr/share/nginx/html nginx\n"
-docker run --name nginx -d -p 80:80 -v /home/randy/tools/docker-lab/html:/usr/share/nginx/html nginx 1> /dev/null
+printf "docker run --name nginx -d -p 80:80 -v ${PWD}/html:/usr/share/nginx/html nginx\n"
+docker run --name nginx -d -p 80:80 -v ${PWD}/html:/usr/share/nginx/html nginx 1> /dev/null
 
 printComment "\nNow go refresh your browser...\n\n"
